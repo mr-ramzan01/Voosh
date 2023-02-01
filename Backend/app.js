@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const userRouter = require('./routers/userRouter');
 const cookieParser = require('cookie-parser');
+const orderRouter = require('./routers/orderRouter');
 
 
 const app = express();
@@ -19,7 +20,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/users', userRouter);
-
+app.use('/orders', orderRouter);
 
 
 app.get('*', (req, res) => {

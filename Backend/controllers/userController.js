@@ -66,8 +66,7 @@ async function LoginUser(req, res) {
 
             // Generating token
             const token = jwt.sign({
-                email: existingUser.email,
-                username: existingUser.username,
+                phoneNumber: existingUser.phoneNumber,
                 _id: existingUser._id,
             }, jwt_secret_key);
             
@@ -115,8 +114,7 @@ async function SignUPUser(req, res) {
 
         // Generating token
         const token = jwt.sign({
-            email: newUser.email,
-            username: newUser.username,
+            phoneNumber: newUser.phoneNumber,
             _id: newUser._id,
         }, jwt_secret_key);
 
@@ -141,4 +139,4 @@ async function SignUPUser(req, res) {
 
 
 
-module.exports = { SignUPUser, LoginUser, LoggedInUser };
+module.exports = { SignUPUser, LoginUser, LoggedInUser, LoggedOutUser };
