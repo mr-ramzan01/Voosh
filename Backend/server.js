@@ -1,6 +1,6 @@
 const app = require('./app');
+const connectionFn = require('./configs/database');
 const PORT = process.env.PORT || 8080;
-const connection = require('./configs/database');
 
 
 
@@ -11,7 +11,7 @@ process.on('uncaughtException', (err) => {
 })
 
 
-connection();
+connectionFn();
 
 
 
